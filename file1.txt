@@ -2,3 +2,8 @@ hi hello how
 r
 u
 mister.....
+
+
+this is meant for undoing git commit
+this is inside my personal branch
+this is inside branch1
