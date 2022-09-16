@@ -2,3 +2,4 @@ hi hello how
 r
 u
 mister.....
+this is inside branch2 of file1.txt 
