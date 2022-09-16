@@ -2,4 +2,9 @@ hi hello how
 r
 u
 mister.....
+
 this is inside branch2 of file1.txt 
+this is meant for undoing git commit
+this is inside my personal branch
+this is inside branch1
+
