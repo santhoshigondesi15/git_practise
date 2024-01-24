@@ -17,11 +17,12 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: 3.8
+        node-version: 16
 
     - name: Install Dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
+        # No specific Python packages needed for Git operations
 
     - name: Run Tests
       run: |
@@ -34,6 +35,13 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v2
+      with:
+        fetch-depth: 0  # Fetch all history for a complete merge
+
+    - name: Debug Git Repository
+      run: |
+        git status
+        git log -n 10
 
     - name: Merge into Main
       run: |
@@ -42,4 +50,8 @@ jobs:
 
     - name: Push to Main
       run: |
+        git config user.name "GitHub Actions"
+        git config user.email "actions@github.com"
+        git add .
+        git commit -m "Auto-commit changes"
         git push origin main
